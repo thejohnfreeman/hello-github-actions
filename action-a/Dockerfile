@@ -5,6 +5,7 @@ LABEL "com.github.actions.description"="Write arguments to the standard output"
 LABEL "com.github.actions.icon"="mic"
 LABEL "com.github.actions.color"="purple"
 
+# TODO: Should we change this?
 LABEL "repository"="http://github.com/octocat/hello-world"
 LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="Octocat <octocat@github.com>"
