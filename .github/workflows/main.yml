@@ -10,7 +10,6 @@ jobs:
       - name: Step One
         id: one
         run: true
-      - name: steps.one.outcome == ${{ steps.one.outcome }}
       - name: Step Two
         id: two
         run: false
