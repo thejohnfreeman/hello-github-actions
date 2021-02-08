@@ -13,7 +13,6 @@ jobs:
       - name: Step Two
         id: two
         run: false
-        continue-on-error: true
       - name: What happened?
         if: steps.two.outcome == 'failure'
         run: echo oops
