@@ -13,9 +13,9 @@ jobs:
       - name: Step Two
         id: two
         run: false
-      - name: What happened?
+      - name: if steps.id.outcome == failure
         if: steps.two.outcome == 'failure'
         run: echo oops
       - name: if failure()
         if: failure()
-        run: echo oops
+        run: echo ${{ steps.two.outcome }}
