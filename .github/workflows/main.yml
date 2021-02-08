@@ -16,3 +16,6 @@ jobs:
       - name: What happened?
         if: steps.two.outcome == 'failure'
         run: echo oops
+      - name: if failure()
+        if: failure()
+        run: echo oops
