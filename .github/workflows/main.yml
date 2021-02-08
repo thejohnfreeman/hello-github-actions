@@ -7,5 +7,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - run: cd action-a && pwd
-      - run: pwd
+      - name: Step One
+        id: one
+        run: true
+      - name: steps.one.outcome == ${{ steps.one.outcome }}
+      - name: Step Two
+        id: two
+        run: false
+        continue-on-error: true
+      - name: What happened?
+        if: steps.two.outcome == 'failure'
+        run: echo oops
