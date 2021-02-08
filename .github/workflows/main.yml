@@ -12,8 +12,8 @@ jobs:
         run: true
       - name: Step Two
         id: two
-        run: false
-      - name: if steps.id.outcome == failure
+        run: true
+      - name: if failure() && steps.id.outcome == failure
         if: failure() && steps.two.outcome == 'failure'
         run: echo oops
       - name: if failure()
