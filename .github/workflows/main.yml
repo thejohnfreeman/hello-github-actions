@@ -6,16 +6,13 @@ jobs:
     name: The build job
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
-      - name: Step One
-        id: one
-        run: true
-      - name: Step Two
-        id: two
-        run: true
-      - name: if failure() && steps.id.outcome == failure
-        if: failure() && steps.two.outcome == 'failure'
-        run: echo oops
-      - name: if failure()
-        if: failure()
-        run: echo ${{ steps.two.outcome }}
+      - id: test
+        run: false
+
+      - name: if steps.test.outcome == 'failure'
+        if: steps.test.outcome == 'failure'
+        run: echo "this does not run"
+
+      - name: if failure() && steps.test.outcome == 'failure'
+        if: failure() && steps.test.outcome == 'failure'
+        run: echo "this runs"
