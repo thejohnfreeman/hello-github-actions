@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - if: github.event_name == 'push' && github.ref == 'refs/heads/master'
-        run: echo pushed to master!
+        run: echo does this work when merging a pull request?
 
       - id: test
         run: false
