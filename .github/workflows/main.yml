@@ -6,7 +6,8 @@ jobs:
     name: The build job
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ github.event_name }} to ${{ github.ref }}
+      - if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        run: echo pushed to master!
 
       - id: test
         run: false
